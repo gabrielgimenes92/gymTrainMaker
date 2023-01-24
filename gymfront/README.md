@@ -1,3 +1,12 @@
+# To run the apps front-end:
+yarn start
+
+# For developers, to start SASS watch:
+sass --watch ./src/Assets/Styles/main.scss:./src/index.css
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
