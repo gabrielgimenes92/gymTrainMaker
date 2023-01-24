@@ -19,7 +19,43 @@ const listOfExercises = [
     },
     {
         title: "Triceps extension"
-    }
+    },
+    {
+        title: "Exercise A"
+    },
+    {
+        title: "Exercise B"
+    },
+    {
+        title: "Exercise C"
+    },
+    {
+        title: "Exercise D"
+    },
+    {
+        title: "Exercise E"
+    },
+]
+
+const filterTypes = [
+    {
+        filterType: "Arms"
+    },
+    {
+        filterType: "Legs"
+    },
+    {
+        filterType: "Chest"
+    },
+    {
+        filterType: "Back"
+    },
+    {
+        filterType: "Core"
+    },
+    {
+        filterType: "Other"
+    },
 ]
 
 
@@ -31,23 +67,52 @@ export const Main = ({title, nav}: MainProps) => {
     useEffect(() => {}, [count])
 
   return (
-    <header>
-        <div>
-            <p>----------------------</p>
-            {workout.length == 0 ? <p>Begin setting up a new workout!</p> : <p>{workout.join(', ')}</p>}
-            <p>----------------------</p>
-        </div>
-        <div>This page is the main</div>
-        {listOfExercises.map(exercise => 
-            <ExerciseCard
-                title={exercise.title}
-                workout={workout} 
-                setWorkout={setWorkout}
-                count={count} 
-                setCount={setCount}
-            />)}
+    <div className="main">
+        <aside>
+            {workout.length == 0 ? <h2>Begin setting up a new workout!</h2> : 
+            
+                <div>
+                    <p>
+                        {workout.join(', ')}
+                    </p>
+                    <button onClick={() => setWorkout([])}>Clear list</button>
+                </div>
+            }
+        </aside>
+        <div className="exerciseLibrary">
+            <div className="libraryHeader">
+                <div className="filter">
+                    <ul>
+                    {filterTypes.map(type => 
+                        <li>
+                            <a href='#'>
+                                <p>{type.filterType}</p>
+                            </a>
+                        </li>)
+                    }
+                    </ul>
+                </div>
+                <div className="search">
+                    <form action="">
+                        <input type="text" />
+                        <button>Search</button>
+                    </form>
+                </div>
+            </div>
+            
+            <h1>Exercise Library</h1>
 
-        
-    </header>
+            <div className="listOfExercises">
+                {listOfExercises.map(exercise => 
+                    <ExerciseCard
+                        title={exercise.title}
+                        workout={workout} 
+                        setWorkout={setWorkout}
+                        count={count} 
+                        setCount={setCount}
+                    />)}
+            </div>
+        </div>
+    </div>
   )
 }

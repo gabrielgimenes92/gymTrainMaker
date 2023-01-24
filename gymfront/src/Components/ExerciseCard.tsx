@@ -21,10 +21,10 @@ export const ExerciseCard = ( {title, workout, setWorkout, count, setCount} : Ex
     }
 
   return (
-    <div>
+    <div className='exerciseCard'>
         { isCollapsed ? 
             <div>
-                <h2>This exercise is called {title}</h2>
+                <h2>{title}</h2>
                 <img src='https://picsum.photos/200'/>
                 <p>Hey, I'm not collapsed anymore!</p>
                 <button onClick={() => setIsCollapsed(false)}>Less</button>
@@ -32,7 +32,7 @@ export const ExerciseCard = ( {title, workout, setWorkout, count, setCount} : Ex
             </div>
         : 
             <div>
-                <h2>This exercise is called {title}</h2>
+                <h2>{title}</h2>
                 <p>Hey, I'm collapsed</p>
                 <button onClick={() => setIsCollapsed(true)}>More</button>
                 <button onClick={() => handleAdd()}>Add</button>

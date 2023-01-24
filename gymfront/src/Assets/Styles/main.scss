@@ -2,6 +2,10 @@ h2 {
     color: darkgray;
 }
 
+@import "./reset";
+@import "./typography";
+@import "./layout";
+
 /*
 
 //"build-css": "sass -w ./src/Assets/Styles/main.scss:./src/index.css",
