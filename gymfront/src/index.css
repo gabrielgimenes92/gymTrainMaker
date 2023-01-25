@@ -83,6 +83,16 @@ a.readMore {
 .main {
   display: grid;
   grid-template-columns: 1fr 2fr; }
+  .main aside table {
+    margin: auto; }
+    .main aside table tr {
+      display: grid;
+      grid-template-columns: 3fr 1fr 0.5fr 1fr 1fr 1fr;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem; }
+      .main aside table tr input {
+        max-width: 3rem; }
   .main .exerciseLibrary {
     background-color: #100a27;
     padding: 1rem; }
@@ -113,7 +123,7 @@ a.readMore {
       justify-content: space-around;
       align-items: center; }
       .main .exerciseLibrary .listOfExercises .exerciseCard {
-        flex-basis: 25%;
+        flex-basis: 22%;
         background-color: #19103d;
         color: whitesmoke;
         padding: 1rem; }

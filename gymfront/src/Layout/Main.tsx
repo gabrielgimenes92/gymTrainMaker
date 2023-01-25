@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { ExerciseCard } from '../Components/ExerciseCard'
+import { WorkoutCard } from '../Components/WorkoutCard'
+
+import { exerciseLibrary } from '../Assets/Data/exercisesLibrary'
+import { filters } from '../Assets/Data/filters'
 
 type MainProps = {
     title: string,
@@ -10,53 +14,8 @@ interface Workout {
     workoutList: Array<string>
 }
 
-const listOfExercises = [
-    {
-        title: "Biceps curl"
-    },
-    {
-        title: "Leg curl"
-    },
-    {
-        title: "Triceps extension"
-    },
-    {
-        title: "Exercise A"
-    },
-    {
-        title: "Exercise B"
-    },
-    {
-        title: "Exercise C"
-    },
-    {
-        title: "Exercise D"
-    },
-    {
-        title: "Exercise E"
-    },
-]
-
-const filterTypes = [
-    {
-        filterType: "Arms"
-    },
-    {
-        filterType: "Legs"
-    },
-    {
-        filterType: "Chest"
-    },
-    {
-        filterType: "Back"
-    },
-    {
-        filterType: "Core"
-    },
-    {
-        filterType: "Other"
-    },
-]
+const listOfExercises = exerciseLibrary;
+const filterTypes = filters;
 
 
 
@@ -69,13 +28,26 @@ export const Main = ({title, nav}: MainProps) => {
   return (
     <div className="main">
         <aside>
-            {workout.length == 0 ? <h2>Begin setting up a new workout!</h2> : 
-            
+            {workout.length == 0 ? 
+                <h2>Begin setting up a new workout!</h2> 
+                :            
                 <div>
-                    <p>
-                        {workout.join(', ')}
-                    </p>
-                    <button onClick={() => setWorkout([])}>Clear list</button>
+                    <table>
+                        <tr>
+                            <th>NAME</th>
+                            <th>SETS</th>
+                            <th></th>
+                            <th>REPS</th>
+                            <th>LBS</th>
+                            <th></th>
+                        </tr>
+                        {workout.map(exercise =>
+                            <WorkoutCard 
+                                title={exercise}
+                            />)}
+                    </table>
+                    <button>Save</button>
+                    <button onClick={() => setWorkout([])}>Clear</button>
                 </div>
             }
         </aside>
