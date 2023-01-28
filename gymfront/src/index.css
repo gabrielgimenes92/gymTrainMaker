@@ -80,6 +80,27 @@ a.readMore {
 .hidden {
   display: none; }
 
+.loginPage {
+  background-color: #100a27;
+  height: 100vh; }
+  .loginPage .loginForm, .loginPage .signinForm {
+    margin: auto;
+    max-width: 800px;
+    flex-flow: column nowrap;
+    justify-content: center; }
+    .loginPage .loginForm *, .loginPage .signinForm * {
+      display: block;
+      margin: auto;
+      text-align: center;
+      color: whitesmoke;
+      margin-bottom: 1rem; }
+    .loginPage .loginForm h1, .loginPage .signinForm h1 {
+      margin-top: 5rem; }
+    .loginPage .loginForm input, .loginPage .signinForm input {
+      width: 250px; }
+    .loginPage .loginForm button, .loginPage .loginForm input, .loginPage .signinForm button, .loginPage .signinForm input {
+      color: black; }
+
 .main {
   display: grid;
   grid-template-columns: 1fr 2fr; }

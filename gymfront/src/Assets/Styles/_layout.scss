@@ -1,3 +1,38 @@
+.loginPage {
+    background-color: rgb(16, 10, 39);
+    height: 100vh;
+
+    .loginForm, .signinForm {
+        margin: auto;
+        max-width: 800px;
+        flex-flow: column nowrap;
+        justify-content: center;
+
+        * {
+            display: block;
+            margin: auto;
+            text-align: center;
+            color: whitesmoke;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            margin-top: 5rem;
+        }
+
+        input {
+            width: 250px;
+        }
+
+        button, input {
+            color: black
+        }
+    }
+
+
+}
+
+
 .main {
     display: grid;
     grid-template-columns: 1fr 2fr;
